@@ -8,6 +8,7 @@ title: "Circuit parameter estimation"
 ## Contents
 
 - [Common-emitter analysis](common-emitter/)
+- [Fuzz-face analysis](fuzz-face/)
 - Additional resources
 
 ## Additional resources
