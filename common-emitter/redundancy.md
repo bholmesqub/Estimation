@@ -1,28 +1,20 @@
 ---
 layout: default
-title: "E-Appendix: Common-emitter parameter redundancy analysis"
+title: "Common-emitter parameter redundancy analysis"
 ---
 
-# E-Appendix: Common-emitter parameter redundancy analysis
+# Common-emitter parameter redundancy analysis
 
-![Common-emitter amplifier](../images/common-emitter.png)
+Omitted from the paper for brevity, here is the complete redundancy analysis of the common-emitter amplifier from KCL to derivative matrix.
+
+![Common-emitter amplifier](../../images/common-emitter.png)
 (*Above*) The common-emitter amplifier.
-
-
-The PNP BJT can be modelled using the Ebers-Moll model:
-<div>
-\begin{align}
-	I_{\mathrm{b}} & = \frac{I_{\mathrm{s}}}{\beta_{\mathrm{f}}}\left(\mathrm{e}^{\frac{V_{\mathrm{eb}}}{NV_{\mathrm{t}}}} - 1\right) + \frac{I_{\mathrm{s}}}{\beta_{\mathrm{r}}}\left(\mathrm{e}^{\frac{V_{\mathrm{eb}} - V_{\mathrm{ec}}}{NV_{\mathrm{t}}}} - 1\right)
-	\\[0.9em]
-	I_{\mathrm{c}} &= I_{\mathrm{s}}\left(\mathrm{e}^{\frac{V_{\mathrm{eb}}}{NV_{\mathrm{t}}}} - 1\right) - I_{\mathrm{s}}\frac{\beta_{\mathrm{r}} + 1}{\beta_{\mathrm{r}}}\left(\mathrm{e}^{\frac{V_{\mathrm{eb}} - V_{\mathrm{ec}}}{NV_{\mathrm{t}}}} - 1\right).
-\end{align}
-</div>
 
 ## Nodal Equations
 
 ### Initial model
 
-Let the convention for this derivation be that current exiting a node is positive. The potentiometer is fixed at having the maximal resistance between nodes 3 and 4. The nodal equations are then given by:
+Let the convention for this derivation be that current exiting a node is positive. The potentiometer is fixed at having the maximal resistance between nodes 3 and 4. The PNP BJT is modelled as two voltage controlled current sources, one from 5 to 2 as the base current, and 4 to 5 as the collector current. Applying KCL the nodal equations are then given by:
 <div>
 \begin{align}
 	C_1\frac{d}{dt}(V_1 - V_2) - I_\mathrm{in} &= 0\tag{1}\\
@@ -44,7 +36,7 @@ And the connections of the voltage sources to the respective nodes
 
 ### Simplified
 
-Here equations that feature the current through the voltage sources have been removed as the currents are undetermined.
+Equations that feature the current through the voltage sources have been removed as the currents are undetermined.
 
 <div>
 \begin{align}
@@ -99,6 +91,17 @@ Resistor admittances are expressed as $$ G_{\mathrm{R}x} = R_x $$
 	\end{bmatrix}
 	\end{split}
 \end{equation}
+</div>
+
+## BJT model
+
+The PNP BJT VCCSs can be modelled using the Ebers-Moll model:
+<div>
+\begin{align}
+	I_{\mathrm{b}} & = \frac{I_{\mathrm{s}}}{\beta_{\mathrm{f}}}\left(\mathrm{e}^{\frac{V_{\mathrm{eb}}}{NV_{\mathrm{t}}}} - 1\right) + \frac{I_{\mathrm{s}}}{\beta_{\mathrm{r}}}\left(\mathrm{e}^{\frac{V_{\mathrm{eb}} - V_{\mathrm{ec}}}{NV_{\mathrm{t}}}} - 1\right)
+	\\[0.9em]
+	I_{\mathrm{c}} &= I_{\mathrm{s}}\left(\mathrm{e}^{\frac{V_{\mathrm{eb}}}{NV_{\mathrm{t}}}} - 1\right) - I_{\mathrm{s}}\frac{\beta_{\mathrm{r}} + 1}{\beta_{\mathrm{r}}}\left(\mathrm{e}^{\frac{V_{\mathrm{eb}} - V_{\mathrm{ec}}}{NV_{\mathrm{t}}}} - 1\right).
+\end{align}
 </div>
 
 ## Exhaustive summary and redundancy
