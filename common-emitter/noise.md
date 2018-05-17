@@ -23,7 +23,7 @@ Noise properties:
   - DC offset = 28.4 µV
   - Standard deviation = 777 µV
 
-## Noise and residual distributions
+## Signal distributions
 
 ![Frequency distributions](../../images/noise/ce-noiseErr-Dist-1.0s-1uF.png)
 

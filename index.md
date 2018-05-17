@@ -11,6 +11,7 @@ title: "Circuit parameter estimation"
 
 - [Redundancy analysis](common-emitter/redundancy/)
 - [Noise floor](common-emitter/noise/)
+- [Aliasing](common-emitter/aliasing/)
 
 ### Additional resources
 
