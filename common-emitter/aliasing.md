@@ -9,6 +9,8 @@ When optimising nonlinear models against measured data, aliasing can cause signi
 
 Graphically this can be illustrated in the following image:
 
-![Common-emitter aliasing example](../../images/aliasing/ce-aliasing.png)
+![Common-emitter aliasing example](../../images/aliasing/ce-aliasing-td-comparison.png)
 
-Here the excitation signal from the article (with supply voltage = -9 V, and peak voltage = 3 V) has been simulated through the common-emitter amplifier model at two sample rates: 2 MHz and 100 kHz. While for audio frequencies a 100 kHz sample rate gives a Nyquist frequency already 2.5x higher than the upper limit, it is clear that only sampling at 100 kHz has caused significant artefacts.
+Here the excitation signal from the article (with supply voltage = -9 V, and peak voltage = 3 V) has been simulated through the common-emitter amplifier model with a base sample rate of 1 MHz, and oversampled up to 16x. Each signal is compared to the 1x oversampled (not oversampled) signal for the lower plots.
+
+While for audio frequencies a 1 MHz sample rate gives a Nyquist frequency already 25x higher than the upper limit, it is clear that only sampling at 100 kHz has caused significant artefacts. When further oversampled, these artefacts change causing error between the models, preventing complete convergence of the model parameters.
